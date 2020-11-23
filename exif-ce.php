@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'You do not have access rights.' );
 }
 
-require_once __DIR__ . '/class/class-judgment-php-version.php';
+require_once __DIR__ . '/class/class-ece-judgment-php-version.php';
 
 $require_php_version  = '7.3.0';
 $get_php_version_bool = new ECE_Judgment_Php_Version();
