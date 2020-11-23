@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 require_once __DIR__ . '/class/class-ece-judgment-php-version.php';
 
-$require_php_version  = '7.3.0';
+$require_php_version  = '7.5.0';
 $get_php_version_bool = new ECE_Judgment_Php_Version();
 if ( false === $get_php_version_bool->judgment( $require_php_version ) ) {
 	require_once ABSPATH . 'wp-admin/includes/plugin.php';
@@ -33,9 +33,9 @@ if ( false === $get_php_version_bool->judgment( $require_php_version ) ) {
 			require_once __DIR__ . '/modules/cancel-activate.php';
 			cancel_activate();
 		}
-		deactivate_plugins( __DIR__ );
+		deactivate_plugins( plugin_basename( __FILE__ ) );
 	} else {
-		echo '<p>' . esc_html_e( 'Admin Bar Tools requires at least PHP 7.3.0 or later.', 'admin-bar-tools' ) . esc_html_e( 'Please upgrade PHP.', 'admin-bar-tools' ) . '</p>';
+		echo '<p>' . esc_html_e( 'Exif CE: Cechk & Eliminate requires at least PHP 7.3.0 or later.', 'exif-ce' ) . esc_html_e( 'Please upgrade PHP.', 'exif-ce' ) . '</p>';
 		exit;
 	}
 } elseif ( true === $get_php_version_bool->judgment( $require_php_version ) ) {
