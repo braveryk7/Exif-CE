@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once __DIR__ . '/class/class-judgment-php-version.php';
 
 $require_php_version  = '7.3.0';
-$get_php_version_bool = new Judgment_Php_Version();
+$get_php_version_bool = new ECE_Judgment_Php_Version();
 if ( false === $get_php_version_bool->judgment( $require_php_version ) ) {
 	require_once ABSPATH . 'wp-admin/includes/plugin.php';
 	if ( is_plugin_active( plugin_basename( __FILE__ ) ) ) {
