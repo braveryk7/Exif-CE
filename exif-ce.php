@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Exif CE: Cechk & Erase
+ * Plugin Name: Exif CE: Cechk & Eliminate
  * Plugin URI:  https://www.braveryk7.com/
- * Description: A plugin that allows you to check, delete, and manage Exif information for images.
+ * Description: A plugin that allows you to check, eliminate, and manage Exif information for images.
  * Version:     0.0.1
  * Author:      Ken-chan
  * Author URI:  https://twitter.com/braveryk7
