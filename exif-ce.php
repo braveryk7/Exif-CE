@@ -39,5 +39,7 @@ if ( false === $get_php_version_bool->judgment( $require_php_version ) ) {
 		exit;
 	}
 } elseif ( true === $get_php_version_bool->judgment( $require_php_version ) ) {
-
+	require_once __DIR__ . '/class/class-exif-ce-main.php';
+	require_once __DIR__ . '/class/class-ece-admin-page.php';
+	$exif_ce_main = new Exif_Ce_Main();
 }
