@@ -36,11 +36,16 @@ class Exif_Ce_Main {
 			'manage_options',
 			'exif-ce',
 			function() use ( $table ) {
-				echo '<div class="wrap">';
-				echo '<h1>Exif CE</h1>';
-				$table->prepare_items();
-				$table->display();
-				echo '</div>';
+				?>
+				<div class="wrap">
+					<h1>Exif CE</h1>
+					<p>Exif情報が付与されている画像が表示されています（Exif情報が無い画像、pngやgif等のExif情報を持てない画像は表示されません）</p>
+					<p>GPS欄に緯度と経度が表示されている場合、撮影した地点が簡単に分かってしまいます。</p>
+					<p>意図せず撮影地点が記録されている場合、画像からExif情報を削除してください。</p>
+					<?php $table->prepare_items(); ?>
+					<?php $table->display(); ?>
+				</div>
+				<?php
 			}
 		);
 	}
