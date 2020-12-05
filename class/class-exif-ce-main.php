@@ -13,7 +13,6 @@ declare( strict_types = 1 );
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'You do not have access rights.' );
 }
-
 /**
  * Exif CE main class.
  */
@@ -22,19 +21,27 @@ class Exif_Ce_Main {
 	 * WordPress Hook.
 	 */
 	public function __construct() {
-		add_action( 'admin_menu', [ $this, 'add_ece_menu' ] );
+		add_action( 'admin_menu', [ $this, 'image_lists' ] );
 	}
 
 	/**
 	 * Insert Admin menu > Tools.
 	 */
-	public function add_ece_menu() {
+	public function image_lists() {
+		require_once __DIR__ . '/class-image-list-table.php';
+		$table = new Image_List_Table();
 		add_management_page(
 			__( 'Exif CE', 'exif-ce' ),
 			__( 'Exif CE', 'exif-ce' ),
 			'manage_options',
 			'exif-ce',
-			[ 'Ece_Admin_Page', 'admin_page' ],
+			function() use ( $table ) {
+				echo '<div class="wrap">';
+				echo '<h1>Exif CE</h1>';
+				$table->prepare_items();
+				$table->display();
+				echo '</div>';
+			}
 		);
 	}
 }
