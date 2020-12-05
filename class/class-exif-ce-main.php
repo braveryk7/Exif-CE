@@ -28,8 +28,8 @@ class Exif_Ce_Main {
 	 * Insert Admin menu > Tools.
 	 */
 	public function image_lists() {
-		require_once __DIR__ . '/class-image-list-table.php';
-		$table = new Image_List_Table();
+		require_once __DIR__ . '/class-ece-image-list-table.php';
+		$table = new Ece_Image_List_Table();
 		add_management_page(
 			__( 'Exif CE', 'exif-ce' ),
 			__( 'Exif CE', 'exif-ce' ),
