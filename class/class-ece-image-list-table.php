@@ -40,7 +40,7 @@ class Ece_Image_List_Table extends WP_List_Table {
 	public function get_columns() {
 		return [
 			'cb'   => 'チェックボックス',
-			'id'   => 'ID',
+			'id'   => '画像/ファイル名',
 			'exif' => 'Exif',
 			'gps'  => 'GPS',
 			'date' => '日付',
@@ -69,7 +69,6 @@ class Ece_Image_List_Table extends WP_List_Table {
 					<span class="media-icon image-icon">
 						<img width="60" height="60" src="<?php echo esc_attr( $item->get_image() ); ?>" class="attachment-60x60 size-60x60" loading="lazy">
 					</span>
-					<?php echo esc_html( $item->get_name() ); ?>
 				</strong>
 				<p class="filename">
 					<span class="screen-reader-text">ファイル名: </span>
